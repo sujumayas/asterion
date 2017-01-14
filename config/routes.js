@@ -34,7 +34,8 @@ module.exports.routes = {
 
   '/': {
     view: 'homepage'
-  }
+  },
+
 
   /***************************************************************************
   *                                                                          *
@@ -45,5 +46,11 @@ module.exports.routes = {
   * for configuration options and examples.                                  *
   *                                                                          *
   ***************************************************************************/
+  '/tests':{
+    controller: 'talentTreeController',
+    action: 'delay'
+  }
+
+
 
 };
