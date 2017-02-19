@@ -34,5 +34,8 @@
     "url": "git://github.com/eespinosa/asterion.git"
   },
   "author": "eespinosa",
-  "license": ""
+  "license": "",
+  "devDependencies": {
+    "sails-hook-babel": "^6.0.3"
+  }
 }
