@@ -1,7 +1,24 @@
 
 <h1>Hola esto es Tests - Delay</h1>
-<div id="example">
-  <div is="delay-button"></div>
+<h2>"Acsio Masiva || Asai Misovac"</h2>
+<div id="Silene">
+  	<warning-message :message="message" v-if="activeWarning" @close="activeWarning = false"></warning-message>
+  	<div class="actions-wrapper">
+  		<div class="actions" v-for="action in actions">
+			<timed-action 
+				:name="action.name" 
+				:duration="action.duration" 
+				:removes="action.removes" 
+				:adds="action.adds"
+			>
+			</timed-action>
+	  	</div>	
+	</div>	
+	<div class="data-right">
+		<pre>
+			{{ $data | json }}
+		</pre>
+	</div>
 </div>
 
 
@@ -16,6 +33,14 @@
 	    text-align: center;
 	    padding: 10px;
 	}
+	.actions-wrapper{
+		width:40%;
+		float:left;
+	}
+	.data-right{
+		width:60%;
+		float:left;
+	}
 	#stokeButton.disabled{
 
 	}
@@ -29,10 +54,12 @@
 		color:black;
 		background-color: rgba(3,3,3,0.5);
 	    position: absolute;
-	    transition: width 8s ease-out;
 		top: 0;
 		left: 0;
 		bottom: 0;
 		right: 0;
 	}
+	#stokeButton.disabled .cooldown[data-duration="2"]{transition: width 2s ease-out;}
+	#stokeButton.disabled .cooldown[data-duration="10"]{transition: width 10s ease-out;}
+	#stokeButton.disabled .cooldown[data-duration="20"]{transition: width 20s ease-out;}
 </style>
